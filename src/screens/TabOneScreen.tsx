@@ -1,8 +1,8 @@
 import {Text, View} from 'react-native';
 import React, {useEffect} from 'react';
-import Icon from 'react-native-vector-icons/Ionicons';
-import {colors, styles} from '../theme/AppTheme';
+import {styles} from '../theme/AppTheme';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {TouchableIcon} from '../components/TouchableIcon';
 
 export const TabOneScreen = () => {
     const {top} = useSafeAreaInsets();
@@ -15,11 +15,11 @@ export const TabOneScreen = () => {
         <View style={{...styles.globalMargin, marginTop: top + 10}}>
             <Text style={styles.title}>Icons</Text>
             <Text>
-                <Icon name="airplane-outline" size={80} color={colors.primary} />
-                <Icon name="american-football-outline" size={80} color={colors.primary} />
-                <Icon name="bluetooth-outline" size={80} color={colors.primary} />
-                <Icon name="hand-left-outline" size={80} color={colors.primary} />
-                <Icon name="finger-print-outline" size={80} color={colors.primary} />
+                <TouchableIcon iconName="airplane-outline" />
+                <TouchableIcon iconName="american-football-outline" />
+                <TouchableIcon iconName="bluetooth-outline" />
+                <TouchableIcon iconName="hand-left-outline" />
+                <TouchableIcon iconName="finger-print-outline" />
             </Text>
         </View>
     );

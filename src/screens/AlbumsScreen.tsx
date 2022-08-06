@@ -1,14 +1,15 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {Button, Text, View} from 'react-native';
+import React, {useContext} from 'react';
+import {AuthContext} from '../context/AuthContext';
+import {styles} from '../theme/AppTheme';
 export const AlbumsScreen = () => {
+    const {authState, signOut} = useContext(AuthContext);
+
     return (
-        <View style={styles.container}>
-            <Text>Album</Text>
+        <View style={styles.globalMargin}>
+            <Text style={styles.title}>Album</Text>
+            {authState.isLoggedIn && <Button title="SignOut" onPress={signOut} />}
         </View>
     );
 };
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: 'white',
-    },
-});
+
